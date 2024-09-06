@@ -6,14 +6,36 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PublicacionTest {
-    // TODO Adiciona tus pruebas unitarias aquí.
-    // Los métodos deben estar anotados con la anotación @Test. Por ejemplo:
-    //
-//    @Test
-//    public void testMultiplicarPositivos() {
-//        int valorEsperado = 15;
-//        CuentaBancaria miCuenta = new CuentaBancaria();
-//        int valorActual = miCuenta.multiplicar(3, 5);
-//        assertEquals(valorEsperado, valorActual);
-//    }
+    public void testConstructorAndGetTitulo() {
+       
+        Publicacion publicacion = new Publicacion("Satanás", 2002);
+        assertEquals("Satanás", publicacion.getTitulo(), "El título debe ser 'Satanás'");
+    }
+
+    public void testConstructorAndGetAnioPublicacion() {
+        
+        Publicacion publicacion = new Publicacion("Satanás", 2002);
+        assertEquals(2002, publicacion.getAnioPublicacion(), "El año de publicación debe ser 2002");
+    }
+
+    public void testMostrarInfo() {
+      
+        Publicacion publicacion = new Publicacion("Satanás", 2002);       
+        String expectedOutput = "Título: Satanás\nAño de Publicación: 2002\n";
+        assertEquals(expectedOutput, getOutputFromMostrarInfo(publicacion));
+    }
+
+    public void testSetAndGetTitulo() {
+     
+        Publicacion publicacion = new Publicacion("Satanás", 2002);        
+        publicacion.setTitulo("Satanás");
+        assertEquals("Satanás", publicacion.getTitulo(), "El título debe ser 'Satanás'");
+    }
+
+    public void testSetAndGetAnioPublicacion() {
+        
+        Publicacion publicacion = new Publicacion("Satanás", 2002);     
+        publicacion.setAnioPublicacion(2002);
+        assertEquals(2002, publicacion.getAnioPublicacion(), "El año de publicación debe ser 2002");
+    }
 }

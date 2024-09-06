@@ -6,14 +6,45 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LibroTest {
-    // TODO Adiciona tus pruebas unitarias aquí.
-    // Los métodos deben estar anotados con la anotación @Test. Por ejemplo:
-    //
-//    @Test
-//    public void testMultiplicarPositivos() {
-//        int valorEsperado = 15;
-//        CuentaBancaria miCuenta = new CuentaBancaria();
-//        int valorActual = miCuenta.multiplicar(3, 5);
-//        assertEquals(valorEsperado, valorActual);
-//    }
+    private Libro libro;
+
+    public void setUp() {
+        libro = new Libro("Satanás", 2002, "Mario Mendoza", 280);
+    }
+  
+    public void testGetAutor() {
+        assertEquals("Mario Mendoza", libro.getAutor());
+    }
+    
+    public void testSetAutor() {
+        libro.setAutor("Mario Mendoza");
+        assertEquals("Mario Mendoza", libro.getAutor());
+    }
+
+    public void testGetNumeroPaginas() {
+        assertEquals(280, libro.getNumeroPaginas());
+    }
+    public void testSetNumeroPaginas() {
+        libro.setNumeroPaginas(280);
+        assertEquals(280, libro.getNumeroPaginas());
+    }
+
+    public void testGetTitulo() {
+        assertEquals("Satanás", libro.getTitulo());
+    }
+
+    public void testSetTitulo() {
+        libro.setTitulo("Satanás");
+        assertEquals("Satanás", libro.getTitulo());
+    }
+
+    public void testGetAnioPublicacion() {
+        assertEquals(2002, libro.getAnioPublicacion());
+    }
+
+    public void testSetAnioPublicacion() {
+        libro.setAnioPublicacion(2002);
+        assertEquals(2002, libro.getAnioPublicacion());
+    }
+
 }
